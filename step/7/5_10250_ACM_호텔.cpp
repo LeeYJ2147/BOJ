@@ -7,9 +7,8 @@ int main()
     for(int i=0; i<TestCase; i++)
     {
         scanf("%d %d %d", &h, &w, &n);
-        for(int j=1; j<w*h; j++)
-            if(j%h) printf("j:%d, %d\n", j, (j%h)*100+(j/h+1));
-            else printf("j:%d, %d\n", j, h*100+(j/h+1));
+        if(n%h) printf("%d\n", (n%h)*100+(n/h+1));
+        else printf("%d\n", h*100+(n/h));
     }
     return 0;
 }
