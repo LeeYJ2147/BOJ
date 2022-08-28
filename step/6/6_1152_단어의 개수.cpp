@@ -1,21 +1,21 @@
 #include <string.h>
 #include <iostream>
+char str[1000002];
 
 int main()
 {
-    char str[1000001];
-    int wasword=0, words=0;
-    std::cin.getline(str, 1000000);
+    int WasSpace=1, words=0;
+    std::cin.getline(str, 1000001);
     int len=strlen(str);
     str[len]=' ';
-    for(int i=0; i<len+1; i++)
+    for(int i=0; i<len; i++)
     {
-        if(str[i]==' ' && wasword)
+        if(str[i]!=' ' && WasSpace)
         {
             words++;
-            wasword=0;
+            WasSpace=0;
         }
-        else if(str[i]!=' ') wasword=1;
+        else if(str[i]==' ') WasSpace=1;
     }
     printf("%d", words);
     return 0;
